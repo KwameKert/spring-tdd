@@ -2,6 +2,7 @@ package com.codeinsyt.tdd;
 
 import com.codeinsyt.tdd.controllers.CarController;
 import com.codeinsyt.tdd.domains.Car;
+import com.codeinsyt.tdd.exceptions.CarNotFoundException;
 import com.codeinsyt.tdd.services.CarService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,14 @@ public class CarControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("name").value("honda"))
                 .andExpect(jsonPath("type").value("hybrid"));
+    }
 
+    @Test
+    public void getCar_shouldReturnCarNotFound() throws Exception{
+        given(carService.getCarDetails(anyString()))
+                .willThrow(new CarNotFoundException());
+
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/cars/honda"))
+                .andExpect(status().isNotFound());
     }
 }
