@@ -1,9 +1,8 @@
 package com.codeinsyt.tdd.services;
 
-import com.codeinsyt.tdd.CarRepository;
 import com.codeinsyt.tdd.domains.Car;
 import com.codeinsyt.tdd.exceptions.CarNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.codeinsyt.tdd.repository.CarRepository;
 
 
 public class CarService {
