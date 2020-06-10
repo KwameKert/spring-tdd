@@ -28,6 +28,7 @@ public class CarControllerTest {
 
     @Test
     public void getCar_shouldReturnCar () throws Exception{
+       // System.out.println(carService);
         given(carService.getCarDetails(anyString())).
                 willReturn(new Car("honda", "hybrid"));
 

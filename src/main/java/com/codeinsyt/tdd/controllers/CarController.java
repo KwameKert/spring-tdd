@@ -23,7 +23,6 @@ public class CarController {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public void carNotFoundExceptions(CarNotFoundException exp){
+    public void carNotFoundExceptions(CarNotFoundException exp){ }
 
-    }
 }
