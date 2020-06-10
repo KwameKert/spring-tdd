@@ -1,10 +1,9 @@
 package com.codeinsyt.tdd.repository;
 
 import com.codeinsyt.tdd.domains.Car;
+import org.springframework.data.repository.CrudRepository;
 
-public class CarRepository {
+public interface CarRepository  extends CrudRepository<Car, Long> {
 
-    public Car findByName(String name){
-        return null;
-    }
+    Car findByName(String name);
 }
